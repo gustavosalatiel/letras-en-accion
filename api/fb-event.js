@@ -29,6 +29,17 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'event_name and event_id are required' });
     }
 
+    // Get client IP from request headers (Vercel forwards real IP)
+    var clientIp = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || req.connection.remoteAddress || '';
+    if (clientIp.indexOf(',') !== -1) {
+      clientIp = clientIp.split(',')[0].trim();
+    }
+
+    // Merge user_data with server-side info
+    var mergedUserData = Object.assign({}, user_data || {}, {
+      client_ip_address: clientIp
+    });
+
     const payload = {
       data: [
         {
@@ -37,7 +48,7 @@ module.exports = async (req, res) => {
           event_id,
           event_source_url: event_source_url || 'https://helenarodriguez.site',
           action_source: 'website',
-          user_data: user_data || {}
+          user_data: mergedUserData
         }
       ]
     };
