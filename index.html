@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras en Acción - Actividades Fonéticas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      window.pixelId = "69cdb91d9afa106403db1a16";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 140, 0, 0.4), 0 8px 25px rgba(255, 140, 0, 0.3); }
+            50% { box-shadow: 0 0 35px rgba(255, 140, 0, 0.6), 0 8px 35px rgba(255, 140, 0, 0.4); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+            to { opacity: 1; max-height: 300px; padding-top: 0; padding-bottom: 20px; }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== CTA BUTTONS ===== */
+        .cta-button {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 50%, #ffc107 100%);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.35);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px auto;
+            border-bottom: 4px solid #2196F3;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            animation: glow 2.5s ease-in-out infinite;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 35px rgba(255, 140, 0, 0.5);
+            background-position: right center;
+        }
+
+        .cta-button:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .cta-button-teal {
+            background: linear-gradient(135deg, #17a2b8 0%, #0dcaf0 50%, #20c997 100%);
+            background-size: 200% auto;
+            border-bottom: 4px solid #0d5a6e;
+            animation: none;
+            box-shadow: 0 8px 25px rgba(23, 162, 184, 0.35);
+        }
+
+        .cta-button-teal:hover {
+            box-shadow: 0 14px 35px rgba(23, 162, 184, 0.5);
+        }
+
+        .cta-button-green {
+            background: linear-gradient(135deg, #52c77a 0%, #43a047 50%, #66bb6a 100%);
+            background-size: 200% auto;
+            border-bottom: 4px solid #2e7d32;
+            box-shadow: 0 8px 25px rgba(82, 199, 122, 0.35);
+        }
+
+        .cta-button-green:hover {
+            box-shadow: 0 14px 35px rgba(82, 199, 122, 0.5);
+        }
+
+        /* ===== SECTION 0 - Hero ===== */
+        .section-hero {
+            background: linear-gradient(160deg, #e0f7fa 0%, #dff1f3 40%, #e8f5e9 100%);
+            padding: 70px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,193,7,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .section-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(33,150,243,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            max-width: 550px;
+            width: 100%;
+            margin: 0 auto 45px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.12));
+        }
+
+        .hero-headline h3 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.45;
+            color: #2c3e50;
+        }
+
+        .hero-headline .highlight-green {
+            background: linear-gradient(180deg, transparent 55%, rgba(200, 230, 150, 0.55) 55%);
+            font-weight: 700;
+            padding: 0 4px;
+        }
+
+        .hero-headline .bold-accent {
+            font-weight: 900;
+            color: #ff6b35;
+            position: relative;
+        }
+
+        .hero-subtext {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        .hero-subtext .bold {
+            font-weight: 800;
+            color: #2c3e50;
+            font-size: 22px;
+        }
+
+        .checkmark-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge {
+            background: white;
+            padding: 16px 22px;
+            border-radius: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 4px solid #52c77a;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .badge:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .badge::before {
+            content: "✓";
+            font-size: 22px;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #52c77a, #43a047);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .hero-description {
+            margin-top: 45px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #444;
+        }
+
+        .hero-description .bold {
+            font-weight: 800;
+            color: #2c3e50;
+        }
+
+        /* ===== SECTION 1 - Pain Points ===== */
+        .section-pain {
+            background: linear-gradient(180deg, #fefcf5 0%, #fff9eb 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .chevron-icon {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .pain-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.45;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #2c3e50;
+        }
+
+        .pain-content .highlight-green {
+            background: linear-gradient(180deg, transparent 55%, rgba(200, 230, 150, 0.55) 55%);
+            padding: 0 4px;
+        }
+
+        .pain-content p {
+            font-size: 17px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .pain-items {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .pain-item {
+            background: white;
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-size: 15px;
+            display: flex;
+            gap: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+            align-items: center;
+        }
+
+        .pain-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .pain-item::before {
+            content: "❌";
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* ===== SECTION 2 - Transition ===== */
+        .section-transition {
+            background: linear-gradient(135deg, #e6f9ea 0%, #fefac8 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* ===== SECTION 3 - Warning ===== */
+        .section-warning {
+            background: linear-gradient(180deg, #fefcf5 0%, #fff9eb 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .warning-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+
+        .warning-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.45;
+            color: #2c3e50;
+        }
+
+        .warning-content .highlight-green {
+            background: linear-gradient(180deg, transparent 55%, rgba(200, 230, 150, 0.55) 55%);
+            padding: 0 4px;
+        }
+
+        .warning-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* ===== SECTION 4 - Solution ===== */
+        .section-solution {
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+            padding: 70px 20px;
+        }
+
+        .solution-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .solution-intro h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .solution-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .solution-image {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            transition: transform 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .solution-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .solution-text h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1976D2;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .solution-text p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.85;
+        }
+
+        .color-bars {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .color-bar {
+            width: 50px;
+            height: 6px;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .color-bar:hover {
+            width: 70px;
+        }
+
+        .bar-blue { background: linear-gradient(90deg, #2196F3, #42a5f5); }
+        .bar-orange { background: linear-gradient(90deg, #ff8c00, #ffa040); }
+        .bar-green { background: linear-gradient(90deg, #52c77a, #66bb6a); }
+        .bar-yellow { background: linear-gradient(90deg, #ffc107, #ffd54f); }
+
+        /* ===== SECTION 5 - Testimonials Intro ===== */
+        .section-testimonials-intro {
+            background: linear-gradient(180deg, #fefcf5 0%, #fff8e1 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .testimonials-intro-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        .testimonials-intro-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        .checklist-item {
+            background: white;
+            padding: 16px 22px;
+            border-radius: 12px;
+            display: flex;
+            gap: 14px;
+            font-size: 15px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            border-left: 4px solid #52c77a;
+            transition: all 0.3s ease;
+            align-items: center;
+        }
+
+        .checklist-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .checklist-item::before {
+            content: "✓";
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #52c77a, #43a047);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== SECTION 6 - Feature Cards ===== */
+        .section-features {
+            background: linear-gradient(180deg, #fefcf5 0%, #f5f5f5 100%);
+            padding: 70px 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 28px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2196F3, #52c77a, #ffc107, #ff8c00);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 22px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #2c3e50;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.75;
+        }
+
+        /* ===== SECTION 7 - Video ===== */
+        .section-video {
+            background: linear-gradient(180deg, #fefcf5 0%, #f0f4f8 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .video-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            line-height: 1.4;
+            color: #2c3e50;
+        }
+
+        .video-placeholder {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .video-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== SECTION 8 - Benefits ===== */
+        .section-benefits {
+            background: linear-gradient(135deg, #f0f2f5 0%, #e8eaed 100%);
+            padding: 70px 20px;
+        }
+
+        .benefits-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 45px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 35px 28px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+
+        .benefit-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #52c77a, #43a047);
+            color: white;
+            border-radius: 14px;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(82, 199, 122, 0.3);
+        }
+
+        .benefit-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.75;
+        }
+
+        /* ===== SECTION 9 - Social Proof ===== */
+        .section-social {
+            background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 70px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-social::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(82,199,122,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .social-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 45px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .testimonial-image:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== SECTION 10 - CTA ===== */
+        .section-cta {
+            background: linear-gradient(135deg, #fff9eb 0%, #fefcf5 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* ===== SECTION 11 - Product Showcase ===== */
+        .section-product {
+            background: linear-gradient(160deg, #8f6e1a 0%, #a67c2e 50%, #7d5f15 100%);
+            padding: 70px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .product-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-showcase {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-showcase img {
+            max-width: 100%;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .product-showcase img:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+
+        .product-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .product-bar {
+            padding: 20px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            letter-spacing: 0.5px;
+        }
+
+        .product-bar:hover {
+            transform: translateX(8px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .bar-green-product { background: linear-gradient(90deg, #52c77a, #43a047); }
+        .bar-orange-product { background: linear-gradient(90deg, #ff8c00, #e67e00); }
+        .bar-blue-product { background: linear-gradient(90deg, #2196F3, #1976D2); }
+
+        .product-steps {
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .steps-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.4s ease;
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .step-icon {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .step-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            font-size: 13px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* ===== SECTION 12 - And more ===== */
+        .section-more {
+            background: linear-gradient(160deg, #8f6e1a 0%, #a67c2e 100%);
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .more-content h2 {
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        /* ===== SECTION 13 - Bonuses ===== */
+        .section-bonuses {
+            background: linear-gradient(180deg, #f0f2f5 0%, #e8eaed 100%);
+            padding: 70px 20px;
+        }
+
+        .bonuses-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 45px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .bonuses-content .highlight-green {
+            background: linear-gradient(180deg, transparent 55%, rgba(200, 230, 150, 0.55) 55%);
+            padding: 0 4px;
+        }
+
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .bonus-card {
+            background: white;
+            padding: 28px 22px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-card::after {
+            content: 'GRATIS';
+            position: absolute;
+            top: 18px;
+            right: -30px;
+            background: linear-gradient(135deg, #52c77a, #43a047);
+            color: white;
+            padding: 4px 35px;
+            font-size: 11px;
+            font-weight: 700;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .bonus-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .bonus-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .bonus-card:hover .bonus-image img {
+            transform: scale(1.08);
+        }
+
+        .bonus-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .bonus-card > p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .bonus-price {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .bonus-price del {
+            text-decoration: line-through;
+        }
+
+        .bonus-price-today {
+            color: #52c77a;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        /* ===== SECTION 14 - Pricing ===== */
+        .section-pricing {
+            background: linear-gradient(180deg, #fefcf5 0%, #fff9eb 50%, #fefcf5 100%);
+            padding: 70px 20px;
+        }
+
+        .pricing-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .pricing-bundle {
+            max-width: 500px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .pricing-bundle img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
+            transition: transform 0.4s ease;
+        }
+
+        .pricing-bundle:hover img {
+            transform: scale(1.03);
+        }
+
+        .pricing-checklist {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: left;
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .pricing-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-item:hover {
+            padding-left: 8px;
+        }
+
+        .pricing-item::before {
+            content: "✅";
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .pricing-item del {
+            color: #999;
+            text-decoration: line-through;
+            margin-left: auto;
+            font-size: 13px;
+        }
+
+        .pricing-total {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #555;
+        }
+
+        .pricing-total strong {
+            color: #e74c3c;
+            text-decoration: line-through;
+        }
+
+        .pricing-final {
+            text-align: center;
+            margin: 40px 0;
+            background: white;
+            border-radius: 22px;
+            padding: 40px 30px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 35px rgba(82, 199, 122, 0.15);
+            border: 2px solid rgba(82, 199, 122, 0.2);
+        }
+
+        .pricing-final h2 {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .pricing-amount {
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #52c77a, #43a047);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .pricing-footer {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .pricing-badges {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* ===== SECTION 15 - About ===== */
+        .section-about {
+            background: linear-gradient(180deg, #fefcf5 0%, #f8f9fa 100%);
+            padding: 70px 20px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 45px;
+            align-items: start;
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .about-photo {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-text h2 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #999;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #52c77a;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== SECTION 16 - Guarantee ===== */
+        .section-guarantee {
+            background: linear-gradient(180deg, #fefcf5 0%, #fff9eb 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .guarantee-seal {
+            max-width: 200px;
+            margin: 0 auto 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .guarantee-seal img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.12));
+        }
+
+        .guarantee-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        .guarantee-content p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 15px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.85;
+        }
+
+        /* ===== SECTION 17 - Results ===== */
+        .section-results {
+            background: linear-gradient(135deg, #b1d895 0%, #8bc34a 50%, #a5d680 100%);
+            padding: 70px 20px;
+        }
+
+        .results-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .results-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .results-image {
+            width: 100%;
+        }
+
+        .results-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .results-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .results-item {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            padding: 16px 20px;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .results-item:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateX(5px);
+        }
+
+        .results-item::before {
+            content: "✓";
+            font-size: 14px;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #52c77a, #2e7d32);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(46,125,50,0.3);
+        }
+
+        .results-item p {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .results-footer {
+            margin-top: 40px;
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.85;
+            background: rgba(255,255,255,0.5);
+            padding: 20px 25px;
+            border-radius: 14px;
+        }
+
+        /* ===== SECTION 18 - FAQ ===== */
+        .section-faq {
+            background: linear-gradient(180deg, #f0f2f5 0%, #e8eaed 100%);
+            padding: 70px 20px;
+        }
+
+        .faq-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 45px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            padding: 22px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+            color: #1976D2;
+        }
+
+        .faq-toggle {
+            display: none;
+        }
+
+        .faq-toggle:checked + .faq-question {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            color: #2e7d32;
+        }
+
+        .faq-toggle:checked ~ .faq-answer {
+            display: block;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 25px 22px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.85;
+        }
+
+        .faq-arrow {
+            font-size: 18px;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #aaa;
+        }
+
+        .faq-toggle:checked ~ .faq-question .faq-arrow {
+            transform: rotate(180deg);
+            color: #2e7d32;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: linear-gradient(135deg, #52c77a 0%, #43a047 100%);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== Utility ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-headline h3 {
+                font-size: 26px;
+            }
+
+            .solution-two-col {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-hero {
+                padding: 50px 15px 60px;
+            }
+
+            .hero-headline h3 {
+                font-size: 22px;
+            }
+
+            .hero-subtext .bold {
+                font-size: 20px;
+            }
+
+            .hero-image {
+                max-width: 85%;
+            }
+
+            .pain-content h2,
+            .warning-content h2,
+            .solution-intro h2 {
+                font-size: 22px;
+            }
+
+            .solution-two-col {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .features-grid,
+            .benefits-grid,
+            .bonuses-grid,
+            .steps-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-amount {
+                font-size: 56px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .about-photo {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-final {
+                padding: 30px 20px;
+            }
+
+            .pricing-checklist {
+                padding: 20px 15px;
+            }
+
+            .bonus-card::after {
+                top: 14px;
+                right: -32px;
+            }
+
+            .cta-button {
+                padding: 16px 35px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-headline h3 {
+                font-size: 19px;
+            }
+
+            .pain-content h2,
+            .warning-content h2 {
+                font-size: 20px;
+            }
+
+            .pricing-amount {
+                font-size: 48px;
+            }
+
+            .section-hero, .section-pain, .section-warning,
+            .section-solution, .section-features, .section-benefits,
+            .section-bonuses, .section-pricing, .section-about,
+            .section-guarantee, .section-results, .section-faq,
+            .section-testimonials-intro, .section-video {
+                padding: 50px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SECTION 0 - Hero -->
+    <section class="section-hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="xXjYHv5838397.webp" alt="Letras en Acción Product">
+            </div>
+
+            <div class="hero-headline">
+                <h3>Descubre la <span class="highlight-green">técnica americana que enseña a los niños a leer</span> hasta <span class="bold-accent">5 veces más rápido</span>, ¡sin presión!</h3>
+            </div>
+
+            <div class="hero-subtext">
+                Con solo <span class="bold">10 minutos</span> al día
+            </div>
+
+            <div class="checkmark-badges">
+                <div class="badge">Ideal para niños de 2 a 12 años, a su ritmo natural</div>
+                <div class="badge">Incluso si aún no reconoce letras o sonidos</div>
+                <div class="badge">Funciona también con niños con TDAH, autismo o dificultades de concentración</div>
+            </div>
+
+            <button class="cta-button" onclick="window.location.href='https://pay.kiwify.com/v8HDgaV'">¡Quiero que mi pequeño lea rápido!</button>
+
+            <div class="hero-description">
+                Con <span class="bold">Letras en Acción Grafismo Fonético</span>, basado en el <span class="bold">método americano</span> de alfabetización, tu hijo aprende a leer hasta <span class="bold">5 veces más rápido</span> — ¡de forma divertida, simple y eficaz, directo desde casa!
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1 - Pain Points -->
+    <section class="section-pain">
+        <div class="container">
+            <div class="chevron-icon">⬇️</div>
+
+            <div class="pain-content animate-on-scroll">
+                <h2>Muchos padres creen que <span class="highlight-green">"cada niño tiene su tiempo"</span>... Pero eso no siempre es cierto.</h2>
+
+                <p>Mientras se espera, el niño puede estar:</p>
+
+                <div class="pain-items">
+                    <div class="pain-item">Perdiendo la fase más fácil para aprender a leer.</div>
+                    <div class="pain-item">Frustrándose al compararse con otros niños.</div>
+                    <div class="pain-item">Desarrollando inseguridades y baja autoestima.</div>
+                    <div class="pain-item">Y LO PEOR: Empieza a creer que no es capaz, sin entender por qué...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 - Transition -->
+    <section class="section-transition">
+        <div class="chevron-icon"><img src="6c3f819.png" alt="Chevron" style="width:100px;"></div>
+    </section>
+
+    <!-- SECTION 3 - Warning -->
+    <section class="section-warning">
+        <div class="container">
+            <div class="warning-icon"><img src="4fc6d813.png" alt="Warning" style="width:120px;"></div>
+
+            <div class="warning-content animate-on-scroll">
+                <h2>Entiende qué es lo que realmente <span class="highlight-green">retrasa la lectura de tu hijo</span>...</h2>
+
+                <p>...la falta de estímulo fonético en la fase adecuada, lo que puede volver el proceso de alfabetización más lento, frustrante y confuso — tanto para el niño como para ti.</p>
+
+                <p>Pero calma, no tienes la culpa de esto... Es que nadie te enseñó cómo ayudar a tu hijo a despertar la lectura de forma natural.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 - Solution -->
+    <section class="section-solution">
+        <div class="container">
+            <div class="solution-intro animate-on-scroll">
+                <h2>Por eso, necesitas Letras en Acción...</h2>
+            </div>
+
+            <div class="solution-two-col">
+                <div class="solution-image animate-on-scroll">
+                    <img src="6dafadf6.webp" alt="Letras en Acción Product Mockup">
+                </div>
+                <div class="solution-image animate-on-scroll">
+                    <img src="32faea7b.jpeg" alt="Kids Learning">
+                </div>
+            </div>
+
+            <div class="solution-intro animate-on-scroll" style="margin-bottom: 40px;">
+                <div class="color-bars">
+                    <div class="color-bar bar-blue"></div>
+                    <div class="color-bar bar-orange"></div>
+                    <div class="color-bar bar-green"></div>
+                    <div class="color-bar bar-yellow"></div>
+                </div>
+                <h2>¿Por qué funcionan las actividades de Grafismo Fonético?</h2>
+            </div>
+
+            <div class="solution-two-col">
+                <div class="solution-image animate-on-scroll">
+                    <img src="fynJBI6496559.webp" alt="Girl with Workbook">
+                </div>
+                <div class="solution-text animate-on-scroll">
+                    <h2>Antes de aprender a leer, el cerebro del niño necesita reconocer patrones, sonidos y movimientos.</h2>
+
+                    <p>El grafismo fonético estimula la conciencia fonológica y visual — es decir, la capacidad del niño de reconocer y relacionar sonidos con letras. Esto ocurre mientras él traza líneas y patrones asociados a cada letra.</p>
+
+                    <p>Así, el proceso de aprender a leer se vuelve más natural, rápido y, lo más importante, ¡muy divertido!</p>
+
+                    <button class="cta-button cta-button-teal" onclick="window.location.href='https://pay.kiwify.com/v8HDgaV'">¡Quiero ver a mi hijo(a) leyendo!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 - Testimonials Intro -->
+    <section class="section-testimonials-intro">
+        <div class="container">
+            <div class="chevron-icon">✏️</div>
+
+            <div class="testimonials-intro-content animate-on-scroll">
+                <h2>¡Comienza hoy la jornada de aprendizaje de tu hijo!</h2>
+
+                <p>Cada actividad de Letras en Acción de Grafismo Fonético ha sido cuidadosamente creada para:</p>
+
+                <div class="checklist-items">
+                    <div class="checklist-item">Estimular el cerebro para la lectura, de forma natural y progresiva</div>
+                    <div class="checklist-item">Desarrollar la conexión entre sonidos y letras desde los primeros trazos</div>
+                    <div class="checklist-item">Fortalecer la conciencia fonológica y visual, de manera divertida</div>
+                    <div class="checklist-item">Dar confianza al niño para leer sus primeras palabras con autonomía</div>
+                </div>
+
+                <p>Todo esto con solo unos minutos al día — directo desde casa, al ritmo natural del niño.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 - Feature Cards -->
+    <section class="section-features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><img src="9ee574b.png" alt="ABC" style="width:80px;height:80px;"></div>
+                    <h3>Reconocimiento de Sonidos y Letras</h3>
+                    <p>Cada sonido se asocia a una letra, fortaleciendo las conexiones cerebrales de forma sólida y duradera.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><img src="36186b4.png" alt="Puzzle" style="width:80px;height:80px;"></div>
+                    <h3>Formación de Palabras</h3>
+                    <p>Actividades dinámicas que transforman la construcción de palabras en una experiencia divertida e intuitiva.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><img src="8a3cd64.png" alt="Reading" style="width:80px;height:80px;"></div>
+                    <h3>Comprensión y Lectura Fluida</h3>
+                    <p>Ejercicios prácticos que mejoran la comprensión de lo que se lee, ayudando a tu hijo a ganar fluidez y confianza.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><img src="623461b.png" alt="Guide" style="width:80px;height:80px;"></div>
+                    <h3>Guía Paso a Paso con Ilustraciones</h3>
+                    <p>Instrucciones visuales y detalladas para que cada fase del aprendizaje sea clara y tranquila, sin complicaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 - Video -->
+    <section class="section-video">
+        <div class="container">
+            <h2>Descubre lo fácil que es enseñar a tu hijo(a) a leer con el Grafismo Fonético...</h2>
+
+            <h2 style="font-size: 24px; margin: 30px 0; color: #2c3e50;">¡Reproducir video! 👇</h2>
+
+            <div class="video-container" style="max-width:700px;margin:30px auto;border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.18);">
+                <video width="100%" controls poster="1b191b33.webp" playsinline style="display:block;">
+                    <source src="Actividades Foneticas.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <div class="chevron-icon">⬇️</div>
+        </div>
+    </section>
+
+    <!-- SECTION 8 - Benefits -->
+    <section class="section-benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <h2 class="animate-on-scroll">Practicando solo 10 minutos al día, tu hijo cosechará estos beneficios para el resto de su vida:</h2>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-number">1</div>
+                        <h3>Niños en fase de alfabetización:</h3>
+                        <p>Ideal para niños que están dando sus primeros pasos en la lectura, el método ofrece un enfoque estructurado e intuitivo, ayudándolos a desarrollar una base sólida y segura.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-number">2</div>
+                        <h3>Padres y educadores que buscan un método eficaz:</h3>
+                        <p>Al respetar el desarrollo natural de cada niño, este método es una excelente opción. Se aleja de la memorización forzada y fomenta un aprendizaje natural y eficaz.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-number">3</div>
+                        <h3>Niños con dificultades de lectura:</h3>
+                        <p>Para los niños que enfrentan desafíos con la lectura y la comprensión, el Método de Gráficos Fonéticos ofrece apoyo adicional con actividades divertidas que facilitan la comprensión de sonidos y palabras, fortaleciendo la confianza y el amor por el aprendizaje.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-number">4</div>
+                        <h3>Escuelas e instituciones que valoran la innovación en la enseñanza:</h3>
+                        <p>Perfecto para escuelas que buscan métodos probados, la ortografía fonética, inspirada en el método americano, ofrece un enfoque moderno que genera resultados reales y duraderos en el desarrollo de los estudiantes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9 - Social Proof -->
+    <section class="section-social">
+        <div class="container">
+            <div class="social-content">
+                <h2 class="animate-on-scroll">Mira lo que dicen madres y educadores sobre Letras en Acción</h2>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-image animate-on-scroll">
+                        <img src="DAiqCX5562063.webp" alt="Testimonial Mamá Carla">
+                    </div>
+                    <div class="testimonial-image animate-on-scroll">
+                        <img src="KtEFyK5577362.webp" alt="Testimonial Mamá Andrea">
+                    </div>
+                    <div class="testimonial-image animate-on-scroll">
+                        <img src="MXjckj5589369.webp" alt="Testimonial Mamá Paula">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10 - CTA -->
+    <section class="section-cta">
+        <div class="container text-center">
+            <button class="cta-button cta-button-teal" onclick="window.location.href='https://pay.kiwify.com/v8HDgaV'" style="font-size: 18px; padding: 20px 55px;">¡Quiero ver a mi hijo(a) leyendo!</button>
+        </div>
+    </section>
+
+    <!-- SECTION 11 - Product Showcase -->
+    <section class="section-product">
+        <div class="container" style="position:relative;">
+            <h2 class="animate-on-scroll">MIRA TODO LO QUE VAS A RECIBIR CON LETRAS EN ACCIÓN:</h2>
+
+            <div class="product-showcase" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px auto;">
+                <img src="XIYWfn6079737.webp" alt="Product 1" style="max-width:23%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.25);">
+                <img src="WvrPhF6079737.webp" alt="Product 2" style="max-width:23%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.25);">
+                <img src="yEsyfA6079737.webp" alt="Product 3" style="max-width:23%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.25);">
+                <img src="AgGdrY6079737.webp" alt="Product 4" style="max-width:23%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.25);">
+            </div>
+
+            <div class="product-bars animate-on-scroll">
+                <div class="product-bar bar-green-product">+ DE 100 ACTIVIDADES DE GRAFISMO FONÉTICO</div>
+                <div class="product-bar bar-orange-product">ACTIVIDADES NIVEL 01: PALABRAS DE 2 SÍLABAS</div>
+                <div class="product-bar bar-blue-product">ACTIVIDADES NIVEL 02: PALABRAS DE 3 SÍLABAS</div>
+                <div class="product-bar bar-green-product">ACTIVIDADES NIVEL 03: PALABRAS DE 4 SÍLABAS</div>
+            </div>
+
+            <div class="product-steps">
+                <div class="steps-title animate-on-scroll">¡Muy sencillo de empezar a usar!</div>
+
+                <div class="steps-grid">
+                    <div class="step-card animate-on-scroll">
+                        <div class="step-icon"><img src="7e63ee4.png" alt="Email" style="width:70px;height:70px;"></div>
+                        <h3>Llega a tu email</h3>
+                        <p>Después de la compra, recibirás en tu email el acceso a la plataforma con los archivos en formato PDF.</p>
+                    </div>
+
+                    <div class="step-card animate-on-scroll">
+                        <div class="step-icon"><img src="6266caa.png" alt="Printer" style="width:70px;height:70px;"></div>
+                        <h3>Tú imprimes</h3>
+                        <p>Puedes imprimir cuando quieras, ya que el acceso es VITALICIO y podrás hacerlo las veces que desees.</p>
+                    </div>
+
+                    <div class="step-card animate-on-scroll">
+                        <div class="step-icon"><img src="2f938f0.png" alt="Crayons" style="width:70px;height:70px;"></div>
+                        <h3>A los pequeños les encanta</h3>
+                        <p>¡Tenemos una excelente noticia para ti: MANOS A LA OBRA! Es importante que siempre ayudes a tu pequeño en las actividades</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12 - And More -->
+    <section class="section-more">
+        <div class="container">
+            <h2>Y eso no es todo...</h2>
+        </div>
+    </section>
+
+    <!-- SECTION 13 - Bonuses -->
+    <section class="section-bonuses">
+        <div class="container">
+            <div class="bonuses-content">
+                <h2 class="animate-on-scroll">Si aseguras tu acceso hoy, ¡te llevas <span class="highlight-green">6 SUPER BONOS</span> de regalo! 🎁</h2>
+
+                <div class="bonuses-grid">
+                    <div class="bonus-card animate-on-scroll">
+                        <div class="bonus-image">
+                            <img src="bkSlaL2628027.webp" alt="Pintu Letras">
+                        </div>
+                        <h3>Pintu Letras</h3>
+                        <p>Presenta cada letra del alfabeto con imágenes asociadas, ayudando a los niños a familiarizarse con las letras de forma visual y divertida.</p>
+                        <p class="bonus-price">De <del>$ 37</del></p>
+                        <p class="bonus-price-today">HOY: GRATIS</p>
+                    </div>
+
+                    <div class="bonus-card animate-on-scroll">
+                        <div class="bonus-image">
+                            <img src="qxLPAY2628027.webp" alt="Rompecabezas Mágico">
+                        </div>
+                        <h3>Rompecabezas Mágico</h3>
+                        <p>Actividades de rompecabezas con letras del alfabeto para una fijación divertida e interactiva</p>
+                        <p class="bonus-price">De <del>$ 47</del></p>
+                        <p class="bonus-price-today">HOY: GRATIS</p>
+                    </div>
+
+                    <div class="bonus-card animate-on-scroll">
+                        <div class="bonus-image">
+                            <img src="abmRyr2628027.webp" alt="Detective ABC">
+                        </div>
+                        <h3>Detective ABC</h3>
+                        <p>Ejercicios de formación de palabras que incentivan la lectura y escritura, ayudando a los niños a construir vocabulario.</p>
+                        <p class="bonus-price">De <del>$ 57</del></p>
+                        <p class="bonus-price-today">HOY: GRATIS</p>
+                    </div>
+
+                    <div class="bonus-card animate-on-scroll">
+                        <div class="bonus-image">
+                            <img src="YqijLM2628027.webp" alt="Alfabeto con el tiempo">
+                        </div>
+                        <h3>Alfabeto con el tiempo</h3>
+                        <p>Cuaderno interactivo que enseña las letras del alfabeto junto a un reloj, promoviendo la lectura y nociones de tiempo de forma lúdica.</p>
+                        <p class="bonus-price">De <del>$ 39</del></p>
+                        <p class="bonus-price-today">HOY: GRATIS</p>
+                    </div>
+
+                    <div class="bonus-card animate-on-scroll">
+                        <div class="bonus-image">
+                            <img src="vurExR2628027.webp" alt="Dibu Letras">
+                        </div>
+                        <h3>Dibu Letras</h3>
+                        <p>Cuaderno con letras del alfabeto trazadas, perfecto para que los niños practiquen la escritura y mejoren su coordinación motora.</p>
+                        <p class="bonus-price">De <del>$ 27</del></p>
+                        <p class="bonus-price-today">HOY: GRATIS</p>
+                    </div>
+
+                    <div class="bonus-card animate-on-scroll">
+                        <div class="bonus-image">
+                            <img src="pfoNGN2628027.webp" alt="Emoción y Letras">
+                        </div>
+                        <h3>Emoción y Letras</h3>
+                        <p>Cuaderno divertido que asocia cada letra del alfabeto a caritas expresivas, ayudando a los niños a aprender con alegría y creatividad.</p>
+                        <p class="bonus-price">De <del>$ 49</del></p>
+                        <p class="bonus-price-today">HOY: GRATIS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14 - Pricing -->
+    <section class="section-pricing">
+        <div class="container">
+            <h2 class="text-center animate-on-scroll">Recapitulando todo lo que vas a recibir con Letras en Acción Grafismo Fonético</h2>
+
+            <div class="pricing-bundle animate-on-scroll">
+                <img src="xMFgFW7148420.webp" alt="Bundle Package">
+            </div>
+
+            <div class="pricing-checklist animate-on-scroll">
+                <div class="pricing-item">Letras en Acción - Grafismo Fonético Nivel 1, 2 y 3 <del>De $197</del></div>
+                <div class="pricing-item">Bono 01: Rompecabezas Mágico <del>De $37 USD</del></div>
+                <div class="pricing-item">Bono 02: Alfabeto en el tiempo <del>De $47 USD</del></div>
+                <div class="pricing-item">Bono 03: Dibu letras <del>De $57 USD</del></div>
+                <div class="pricing-item">Bono 04: Pintu Letras <del>De $39 USD</del></div>
+                <div class="pricing-item">Bono 05: Emoción y letras <del>De $27 USD</del></div>
+                <div class="pricing-item">Bono 06: Detective ABC <del>De $49 USD</del></div>
+                <div class="pricing-item">👤 Soporte Profesional</div>
+                <div class="pricing-item">🤙 Garantía Incondicional</div>
+            </div>
+
+            <div class="pricing-total animate-on-scroll">En total, todo debería costar <strong>$453.00 USD</strong></div>
+
+            <div class="pricing-final animate-on-scroll">
+                <h2>Pero hoy, tendrás acceso completo por</h2>
+                <div class="pricing-amount">$ 8 USD</div>
+                <div class="pricing-footer">ACCESO VITALICIO | ACCESO INMEDIATO</div>
+            </div>
+
+            <div class="text-center">
+                <button class="cta-button cta-button-green" onclick="window.location.href='https://pay.kiwify.com/v8HDgaV'" style="font-size: 18px; padding: 20px 55px;">¡QUIERO MI KIT AHORA!</button>
+            </div>
+
+            <div class="pricing-badges" style="margin-top:30px;">
+                <img src="b5925b2.png" alt="SSL Blindado" style="max-width:400px;width:100%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 15 - About -->
+    <section class="section-about">
+        <div class="about-content animate-on-scroll">
+            <div class="about-photo">
+                <img src="WAdXWt9783985.png" alt="Mariana López">
+            </div>
+
+            <div class="about-text">
+                <h2>QUIEN SOY YO</h2>
+
+                <h3>Mariana López</h3>
+
+                <p>Soy mamá, educadora y especialista en alfabetización temprana. Después de ver a cientos de niños luchar con la lectura, me di cuenta de que faltaba una herramienta que combinara la ciencia del aprendizaje con la diversión y la sencillez.</p>
+
+                <p>Por eso creé Letras en Acción Grafismo Fonético — una herramienta basada en el método americano que despierta la capacidad de lectura de los niños de forma natural, rápida y muy divertida.</p>
+
+                <p>Hoy, miles de niños ya están experimentando los beneficios de este método. ¿Será tu hijo el próximo?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 16 - Guarantee -->
+    <section class="section-guarantee">
+        <div class="container">
+            <div class="guarantee-seal animate-on-scroll">
+                <img src="36bbf095.webp" alt="7 Day Guarantee">
+            </div>
+
+            <div class="guarantee-content animate-on-scroll">
+                <h2>GARANTÍA DE SATISFACCIÓN TOTAL</h2>
+
+                <p>Estamos tan seguros de que Letras en Acción de Grafismo Fonético ayudará a tu hijo a leer con más facilidad, que te ofrecemos una garantía de satisfacción total por 7 días.</p>
+
+                <p>Si por cualquier motivo no estás 100% satisfecho con los resultados, recibirás un reembolso completo — sin preguntas, sin condiciones.</p>
+
+                <div style="margin-top: 30px; text-align:center;">
+                    <img src="b5925b2.png" alt="SSL Blindado" style="max-width:400px;width:100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 17 - Results -->
+    <section class="section-results">
+        <div class="results-content">
+            <h2 class="animate-on-scroll">¡En pocos días vas a notar la diferencia en la lectura de tu hijo:</h2>
+
+            <div class="results-grid">
+                <div class="results-image animate-on-scroll">
+                    <img src="fynJBI6496559.webp" alt="Mom and Child">
+                </div>
+
+                <div>
+                    <div class="results-list">
+                        <div class="results-item animate-on-scroll">
+                            <p>Reconocerá sílabas y sonidos con más facilidad</p>
+                        </div>
+                        <div class="results-item animate-on-scroll">
+                            <p>Se sentirá más confiado al intentar leer palabras nuevas.</p>
+                        </div>
+                        <div class="results-item animate-on-scroll">
+                            <p>Mostrará más interés por los libros y las historias.</p>
+                        </div>
+                        <div class="results-item animate-on-scroll">
+                            <p>Aprenderá a su propio ritmo, sin frustración ni comparaciones</p>
+                        </div>
+                        <div class="results-item animate-on-scroll">
+                            <p>Ganará confianza en su capacidad de aprender</p>
+                        </div>
+                    </div>
+
+                    <div class="results-footer animate-on-scroll">
+                        Con el Letras en Acción Grafismo Fonético, tu hijo desarrolla el cerebro para aprender a leer con ligereza, a su propio ritmo — y con resultados visibles en pocos días.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 18 - FAQ -->
+    <section class="section-faq">
+        <div class="container">
+            <h2 class="text-center animate-on-scroll">PREGUNTAS FRECUENTES</h2>
+
+            <div class="faq-container">
+                <div class="faq-item animate-on-scroll">
+                    <input type="checkbox" class="faq-toggle" id="faq1">
+                    <label for="faq1" class="faq-question">
+                        ¿Cuáles son las formas de pago?
+                        <span class="faq-arrow">▼</span>
+                    </label>
+                    <div class="faq-answer">
+                        Puedes pagar con cualquier tarjeta de crédito o débito, por transferencia bancaria o con boleto bancario. El proceso es seguro y toma solo un momento.
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <input type="checkbox" class="faq-toggle" id="faq2">
+                    <label for="faq2" class="faq-question">
+                        ¿Cómo accedo a la plataforma?
+                        <span class="faq-arrow">▼</span>
+                    </label>
+                    <div class="faq-answer">
+                        El acceso al Área de Miembros se envía a tu email inmediatamente después de la confirmación del pago. ¡Ahí podrás descargar todo el contenido en PDF y empezar a usar de inmediato!
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <input type="checkbox" class="faq-toggle" id="faq3">
+                    <label for="faq3" class="faq-question">
+                        ¿Tengo que pagar cada mes?
+                        <span class="faq-arrow">▼</span>
+                    </label>
+                    <div class="faq-answer">
+                        No, el pago es único y tendrás acceso vitalicio al material. Una vez que pagues, podrás usar Letras en Acción Grafismo Fonético por toda la vida, sin cargos adicionales.
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <input type="checkbox" class="faq-toggle" id="faq4">
+                    <label for="faq4" class="faq-question">
+                        ¿Puedo hacer preguntas o resolver dudas?
+                        <span class="faq-arrow">▼</span>
+                    </label>
+                    <div class="faq-answer">
+                        ¡Sí! Solo tienes que contactar a nuestro equipo de soporte por email. Estamos aquí para ayudarte en cada paso de tu jornada.
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <input type="checkbox" class="faq-toggle" id="faq5">
+                    <label for="faq5" class="faq-question">
+                        ¿Para quién está indicado el material?
+                        <span class="faq-arrow">▼</span>
+                    </label>
+                    <div class="faq-answer">
+                        Nuestros ejercicios de grafismo fonético están diseñados para niños de diferentes edades, abarcando desde la primera infancia hasta la educación primaria. Es especialmente efectivo para niños de 2 a 12 años.
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <input type="checkbox" class="faq-toggle" id="faq6">
+                    <label for="faq6" class="faq-question">
+                        ¿Cuáles son los beneficios del Grafismo Fonético?
+                        <span class="faq-arrow">▼</span>
+                    </label>
+                    <div class="faq-answer">
+                        Los grafismos fonéticos facilitan la asociación entre sonido y letra, desarrollan la conciencia fonológica y fortalecen la memoria visual y auditiva. También mejoran la coordinación motora fina y hacen la lectura más interesante y menos frustrante para los niños.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright ©2025. Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Add staggered delay based on element position within its parent
+                    const siblings = entry.target.parentElement.querySelectorAll('.animate-on-scroll');
+                    let delay = 0;
+                    siblings.forEach((sibling, i) => {
+                        if (sibling === entry.target) {
+                            delay = i * 100;
+                        }
+                    });
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, Math.min(delay, 400));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll behavior for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
