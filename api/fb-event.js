@@ -4,7 +4,13 @@ const API_VERSION = 'v21.0';
 
 module.exports = async (req, res) => {
   // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://helenarodriguez.site');
+  var origin = req.headers.origin;
+  var allowed = ['https://helenarodriguez.site', 'https://www.helenarodriguez.site'];
+  if (allowed.indexOf(origin) !== -1) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://helenarodriguez.site');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
